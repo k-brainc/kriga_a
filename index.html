@@ -396,10 +396,10 @@
     font-size:18px; line-height:1; cursor:pointer; display:flex; align-items:center; justify-content:center; flex:none;
   }
   .map-modal-body{
-    flex:1; overflow:auto; background:#EFE7DA; display:flex; align-items:flex-start; justify-content:center;
-    -webkit-overflow-scrolling:touch;
+    flex:1; min-height:0; overflow:hidden; background:#EFE7DA; display:flex; align-items:center; justify-content:center;
+    padding:8px;
   }
-  .map-modal-body img{width:100%; height:auto; display:block;}
+  .map-modal-body img{width:auto; height:auto; max-width:100%; max-height:100%; display:block; object-fit:contain;}
   .map-modal-hint{font-size:11px; color:var(--ink-soft); text-align:center; padding:6px 10px 0; flex:none;}
   .map-modal-routes{
     display:flex; flex-wrap:wrap; gap:6px; padding:12px 14px; border-top:1px solid rgba(36,27,21,0.1); flex:none;
