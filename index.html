@@ -299,14 +299,14 @@
 
   /* ---------- floor guide ---------- */
   .floor-list{background:var(--paper); border-radius:var(--radius); box-shadow:var(--shadow); padding:6px 16px;}
-  .floor-row{display:flex; align-items:center; gap:14px; padding:12px 0; border-bottom:1px dashed rgba(36,27,21,0.12);}
+  .floor-row{display:flex; flex-wrap:wrap; align-items:center; gap:6px 14px; padding:12px 0; border-bottom:1px dashed rgba(36,27,21,0.12);}
   .floor-row:last-child{border-bottom:none;}
   .floor-badge{
     padding:0 10px; height:30px; border-radius:8px; flex:none;
     background:var(--ink-deep); color:var(--peach-soft); font-family:var(--serif);
     font-weight:700; font-size:11.5px; display:flex; align-items:center; justify-content:center; white-space:nowrap;
   }
-  .floor-desc{font-size:15px; color:var(--ink-soft);}
+  .floor-desc{font-size:15px; color:var(--ink-soft); flex-basis:100%;}
 
   /* ---------- contact ---------- */
   .contact-card{
@@ -683,7 +683,6 @@
         <h4 class="i18n-ko">KAIST 본원</h4><h4 class="i18n-en">KAIST Main Campus</h4>
         <div class="addr">
           <div class="i18n-ko"><b>도로명주소</b><br>대전광역시 유성구 대학로 291 (우편번호 34141)</div><div class="i18n-en"><b>Address</b><br>291 Daehak-ro, Yuseong-gu, Daejeon (34141)</div>
-          <div class="i18n-ko" style="opacity:0.75; font-size:14px;">※ 워크숍이 진행되는 정확한 건물 및 강의실은 추후 안내됩니다.</div><div class="i18n-en" style="opacity:0.75; font-size:14px;">※ The exact building and classroom for the workshop will be announced later.</div>
         </div>
         <a class="map-btn" href="https://map.naver.com/p/search/%EB%8C%80%EC%A0%84%EA%B4%91%EC%97%AD%EC%8B%9C%20%EC%9C%A0%EC%84%B1%EA%B5%AC%20%EB%8C%80%ED%95%99%EB%A1%9C%20291%20%EC%B9%B4%EC%9D%B4%EC%8A%A4%ED%8A%B8" target="_blank" rel="noopener"><span class="i18n-ko">지도에서 보기 →</span><span class="i18n-en">View on Map →</span></a>
       </div>
