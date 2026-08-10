@@ -323,9 +323,24 @@
   .map-btn{display:inline-flex; align-items:center; gap:8px; background:var(--peach); color:var(--ink-deep); font-weight:800; font-size:16px; padding:12px 22px; border-radius:999px; text-decoration:none;}
 
   /* ---------- learning materials ---------- */
-  .material-card{background:var(--paper); border-radius:var(--radius); box-shadow:var(--shadow); padding:22px;}
-  .material-title{font-family:var(--serif); font-weight:800; font-size:18px; color:var(--ink-deep); margin-bottom:6px;}
-  .material-desc{font-size:14.5px; color:var(--ink-soft); line-height:1.6; margin-bottom:16px;}
+  .material-list{display:flex; flex-direction:column; gap:10px;}
+  .material-card{
+    background:var(--paper); border-radius:16px; box-shadow:var(--shadow); padding:16px 18px;
+    display:flex; align-items:center; gap:12px;
+  }
+  .material-num{
+    font-family:var(--serif); font-weight:800; font-size:15px; color:var(--peach-soft);
+    background:var(--ink-deep); width:30px; height:30px; border-radius:50%; flex:none;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .material-body{flex:1; min-width:0;}
+  .material-title{font-family:var(--serif); font-weight:800; font-size:15.5px; color:var(--ink-deep); line-height:1.4;}
+  .material-note{font-size:12px; color:var(--terracotta); margin-top:3px; line-height:1.5;}
+  .material-link{
+    flex:none; display:flex; align-items:center; justify-content:center;
+    width:38px; height:38px; border-radius:50%; background:var(--peach-dim); color:var(--terracotta);
+    font-size:16px; text-decoration:none;
+  }
 
   /* ---------- page-flip arrows ---------- */
   .page-arrow{
@@ -823,10 +838,43 @@
     </div>
     <div class="page-body">
       <div class="draft-banner i18n-ko">※ 워크숍 준비에 참고할 수 있는 학습 자료입니다.</div><div class="draft-banner i18n-en">※ Learning materials to help you prepare for the workshop.</div>
-      <div class="material-card">
-        <div class="material-title i18n-ko">추가자료</div><div class="material-title i18n-en">Additional Materials</div>
-        <div class="material-desc i18n-ko">워크숍과 관련된 추가 학습 자료 문서를 확인할 수 있습니다.</div><div class="material-desc i18n-en">View the supplementary learning materials document related to the workshop.</div>
-        <a class="map-btn" href="https://docs.google.com/document/d/1nhptUPvovXcsHxrv7mxdsDe7ySc-M5_Pffo6og1MZlo/edit?usp=drivesdk" target="_blank" rel="noopener"><span class="i18n-ko">추가자료 보기 →</span><span class="i18n-en">View Additional Materials →</span></a>
+      <div class="material-list">
+        <div class="material-card">
+          <div class="material-num">1</div>
+          <div class="material-body">
+            <div class="material-title i18n-ko">kickstarter</div><div class="material-title i18n-en">kickstarter</div>
+          </div>
+          <a class="material-link" href="https://docs.google.com/document/d/1nhptUPvovXcsHxrv7mxdsDe7ySc-M5_Pffo6og1MZlo/edit?usp=drivesdk" target="_blank" rel="noopener" aria-label="열기">→</a>
+        </div>
+        <div class="material-card">
+          <div class="material-num">2</div>
+          <div class="material-body">
+            <div class="material-title i18n-ko">디어 데이터(Dear Data) 프로젝트</div><div class="material-title i18n-en">Dear Data Project</div>
+          </div>
+          <a class="material-link" href="https://www.dear-data.com/theproject" target="_blank" rel="noopener" aria-label="열기">→</a>
+        </div>
+        <div class="material-card">
+          <div class="material-num">3</div>
+          <div class="material-body">
+            <div class="material-title i18n-ko">도서) 모든 것은 노래한다: 이야기하는 지도들</div><div class="material-title i18n-en">Book: Everything Sings &mdash; Maps that Tell Stories</div>
+          </div>
+          <a class="material-link" href="https://your-mind.com/product/%EB%AA%A8%EB%93%A0-%EA%B2%83%EC%9D%80-%EB%85%B8%EB%9E%98%ED%95%9C%EB%8B%A4-%EC%9D%B4%EC%95%BC%EA%B8%B0%ED%95%98%EB%8A%94-%EC%A7%80%EB%8F%84%EB%93%A4/2570/" target="_blank" rel="noopener" aria-label="열기">→</a>
+        </div>
+        <div class="material-card">
+          <div class="material-num">4</div>
+          <div class="material-body">
+            <div class="material-title i18n-ko">모든 것은 노래한다(pdf)</div><div class="material-title i18n-en">Everything Sings (PDF)</div>
+          </div>
+          <a class="material-link" href="https://www.thisamericanlife.org/sites/default/files/Everything_Sings_Excerpt_and_Intro.pdf" target="_blank" rel="noopener" aria-label="열기">→</a>
+        </div>
+        <div class="material-card">
+          <div class="material-num">5</div>
+          <div class="material-body">
+            <div class="material-title i18n-ko">The map as art : contemporary artists explore cartography</div><div class="material-title i18n-en">The map as art : contemporary artists explore cartography</div>
+            <div class="material-note i18n-ko">가입 시 도서 전체 무료 열람 가능</div><div class="material-note i18n-en">Free full access to the book after signing up</div>
+          </div>
+          <a class="material-link" href="https://archive.org/details/mapasartcontempo0000harm/mode/2up" target="_blank" rel="noopener" aria-label="열기">→</a>
+        </div>
       </div>
     </div>
   </section>
