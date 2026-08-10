@@ -873,7 +873,7 @@
         <div class="student-modal-value" id="studentModalMentor"></div>
       </div>
       <div class="student-modal-row">
-        <div class="student-modal-label i18n-ko">탐방 코스</div><div class="student-modal-label i18n-en">Discovery Course</div>
+        <div class="student-modal-label i18n-ko">루트</div><div class="student-modal-label i18n-en">Route</div>
         <div class="student-modal-value" id="studentModalCourse"></div>
       </div>
     </div>
@@ -1003,13 +1003,13 @@ document.querySelectorAll('.map-route-btn').forEach(function(b){
 
 // ---------- student info modal ----------
 var MENTOR_GROUPS = [
-  {id:1, mentorKo:'임예린', mentorEn:'Yerin Lim', deptKo:'산업디자인학과', deptEn:'Dept. of Industrial Design', course:'A', students:['김소연','김수아','이도연','강민서']},
-  {id:2, mentorKo:'여남규', mentorEn:'Namgyu Yeo', deptKo:'산업디자인학과', deptEn:'Dept. of Industrial Design', course:'B', students:['김지안','서멜린다','추하율','김민서']},
-  {id:3, mentorKo:'명소영', mentorEn:'Soyoung Myeong', deptKo:'산업디자인학과', deptEn:'Dept. of Industrial Design', course:'C', students:['손채원','심서현','강윤하','김윤지']},
-  {id:4, mentorKo:'이채원', mentorEn:'Chaewon Lee', deptKo:'전산학부', deptEn:'School of Computing', course:'A', students:['이도영','이서은','김재윤','정다예']},
-  {id:5, mentorKo:'서혜연', mentorEn:'Hyeyeon Seo', deptKo:'산업디자인학과', deptEn:'Dept. of Industrial Design', course:'D', students:['이선우','이해원','김태은','정세민']},
-  {id:6, mentorKo:'김주해', mentorEn:'Juhae Kim', deptKo:'전기및전자공학부', deptEn:'School of Electrical Engineering', course:'B', students:['정우찬','정율희','김효빈','한은서']},
-  {id:7, mentorKo:'김지영', mentorEn:'Jiyoung Kim', deptKo:'디지털인문사회과학부', deptEn:'Dept. of Digital Humanities & Social Sciences', course:'C', students:['최준','한아람','강나연']}
+  {id:1, mentorKo:'임예린', mentorEn:'Yerin Lim', deptKo:'산업디자인학과', deptEn:'Dept. of Industrial Design', course:'1', students:['김소연','김수아','이도연','강민서']},
+  {id:2, mentorKo:'여남규', mentorEn:'Namgyu Yeo', deptKo:'산업디자인학과', deptEn:'Dept. of Industrial Design', course:'2', students:['김지안','서멜린다','추하율','김민서']},
+  {id:3, mentorKo:'명소영', mentorEn:'Soyoung Myeong', deptKo:'산업디자인학과', deptEn:'Dept. of Industrial Design', course:'3', students:['손채원','심서현','강윤하','김윤지']},
+  {id:4, mentorKo:'이채원', mentorEn:'Chaewon Lee', deptKo:'전산학부', deptEn:'School of Computing', course:'1', students:['이도영','이서은','김재윤','정다예']},
+  {id:5, mentorKo:'서혜연', mentorEn:'Hyeyeon Seo', deptKo:'산업디자인학과', deptEn:'Dept. of Industrial Design', course:'4', students:['이선우','이해원','김태은','정세민']},
+  {id:6, mentorKo:'김주해', mentorEn:'Juhae Kim', deptKo:'전기및전자공학부', deptEn:'School of Electrical Engineering', course:'2', students:['정우찬','정율희','김효빈','한은서']},
+  {id:7, mentorKo:'김지영', mentorEn:'Jiyoung Kim', deptKo:'디지털인문사회과학부', deptEn:'Dept. of Digital Humanities & Social Sciences', course:'3', students:['최준','한아람','강나연']}
 ];
 var STUDENT_MENTOR = {};
 MENTOR_GROUPS.forEach(function(g){
@@ -1032,7 +1032,7 @@ function openStudentModal(chip){
   if(group){
     document.getElementById('studentModalGroup').textContent = isEn ? ('Group ' + group.id) : (group.id + '조');
     document.getElementById('studentModalMentor').textContent = isEn ? group.mentorEn : group.mentorKo;
-    document.getElementById('studentModalCourse').textContent = isEn ? ('Course ' + group.course) : ('코스 ' + group.course);
+    document.getElementById('studentModalCourse').textContent = isEn ? ('Route ' + group.course) : ('루트 ' + group.course);
   } else {
     document.getElementById('studentModalGroup').textContent = '-';
     document.getElementById('studentModalMentor').textContent = '-';
