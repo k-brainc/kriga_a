@@ -321,6 +321,11 @@
   .student-modal-value{color:var(--ink); font-weight:700; text-align:right;}
 
   /* ---------- mentor groups ---------- */
+  .ptab-switch{display:flex; gap:6px; background:var(--cream); padding:4px; border-radius:999px; margin-bottom:14px;}
+  .ptab-btn{flex:1; border:none; background:transparent; color:var(--ink-soft); font-family:var(--sans); font-weight:800; font-size:13px; padding:9px 0; border-radius:999px; cursor:pointer;}
+  .ptab-btn.active{background:var(--ink-deep); color:var(--peach-soft);}
+  .ptab-panel{display:none;}
+  .ptab-panel.active{display:block;}
   .mentor-list{margin-top:10px;}
   .mentor-card{
     background:var(--paper); border-radius:var(--radius); box-shadow:var(--shadow); padding:12px 14px; margin-bottom:8px;
@@ -667,10 +672,15 @@
     <div class="page-sticky-head">
       <div class="brand-header">
         <div class="bh-title i18n-ko">K예술영재 프로젝트</div><div class="bh-title i18n-en">K-Arts Gifted Youth Project</div>
-        <div class="bh-sub i18n-ko">미술분야 워크숍 · 참가자 명단</div><div class="bh-sub i18n-en">Visual Arts Workshop · Participants</div>
+        <div class="bh-sub i18n-ko">미술분야 워크숍 · 참가자 및 생활멘토</div><div class="bh-sub i18n-en">Visual Arts Workshop · Participants &amp; Mentors</div>
       </div>
     </div>
     <div class="page-body">
+      <div class="ptab-switch">
+        <button class="ptab-btn active" data-ptab="students"><span class="i18n-ko">참가자</span><span class="i18n-en">Participants</span></button>
+        <button class="ptab-btn" data-ptab="mentors"><span class="i18n-ko">생활멘토</span><span class="i18n-en">Life Mentors</span></button>
+      </div>
+      <div class="ptab-panel active" data-ptab-panel="students">
       <div class="draft-banner i18n-ko">※ 미술분야 워크숍 참여학생 명단입니다. (무순)</div><div class="draft-banner i18n-en">※ List of Visual Arts Workshop participants. (Unordered)</div>
       <div class="participant-grid" style="margin-top:14px;">
         <div class="participant-chip"><div class="pname i18n-ko">이해원</div><div class="pname i18n-en">Haewon Lee</div><div class="pschool i18n-ko">불당중 · 1학년</div><div class="pschool i18n-en">Buldang Middle School · Grade 1</div></div>
@@ -701,8 +711,9 @@
         <div class="participant-chip"><div class="pname i18n-ko">이선우</div><div class="pname i18n-en">Sunwoo Lee</div><div class="pschool i18n-ko">대구제일중 · 1학년</div><div class="pschool i18n-en">Daegu Jeil Middle School · Grade 1</div></div>
         <div class="participant-chip"><div class="pname i18n-ko">정율희</div><div class="pname i18n-en">Yulhee Jung</div><div class="pschool i18n-ko">천안월봉중 · 1학년</div><div class="pschool i18n-en">Cheonan Wolbong Middle School · Grade 1</div></div>
       </div>
+      </div>
 
-      <div class="subhead" style="margin-top:26px;"><span class="dot"></span><span class="i18n-ko">생활멘토 별 담당 학생</span><span class="i18n-en">Student Life Mentors by Group</span></div>
+      <div class="ptab-panel" data-ptab-panel="mentors">
       <div class="draft-banner i18n-ko">※ 카이스트 재학생 생활멘토 7개 조로 편성되어 함께 캠퍼스를 탐방합니다.</div><div class="draft-banner i18n-en">※ KAIST student life mentors are organized into 7 groups to explore campus together with participants.</div>
       <div class="mentor-list">
         <div class="mentor-card">
@@ -763,11 +774,12 @@
           <div class="mentor-card-head">
             <div class="mentor-badge i18n-ko">7조</div><div class="mentor-badge i18n-en">Group 7</div>
             <div>
-              <div class="mentor-name i18n-ko">김지영</div><div class="mentor-name i18n-en">Jiyoung Kim</div>
+              <div class="mentor-name i18n-ko">박경호</div><div class="mentor-name i18n-en">Kyungho Park</div>
             </div>
           </div>
           <div class="mentor-students i18n-ko">담당 학생: 최준, 한아람, 강나연</div><div class="mentor-students i18n-en">Students: Jun Choi, Aram Han, Nayeon Kang</div>
         </div>
+      </div>
       </div>
     </div>
   </section>
@@ -889,7 +901,7 @@
     <button class="nav-item" data-page="page-welcome"><span class="nico">💌</span><span class="nlabel i18n-ko">환영사</span><span class="nlabel i18n-en">Welcome</span></button>
     <button class="nav-item" data-page="page-schedule"><span class="nico">🗓️</span><span class="nlabel i18n-ko">일정표</span><span class="nlabel i18n-en">Schedule</span></button>
     <button class="nav-item" data-page="page-advisors"><span class="nico">🎨</span><span class="nlabel i18n-ko">자문위원 및 교수진</span><span class="nlabel i18n-en">Advisors &amp; Faculty</span></button>
-    <button class="nav-item" data-page="page-participants"><span class="nico">🧑‍🎓</span><span class="nlabel i18n-ko">참가자</span><span class="nlabel i18n-en">Participants</span></button>
+    <button class="nav-item" data-page="page-participants"><span class="nico">🧑‍🎓</span><span class="nlabel i18n-ko">참가자 및 생활멘토</span><span class="nlabel i18n-en">Participants &amp; Mentors</span></button>
     <button class="nav-item" data-page="page-notice"><span class="nico">📋</span><span class="nlabel i18n-ko">지원안내</span><span class="nlabel i18n-en">Info &amp; Support</span></button>
     <button class="nav-item" data-page="page-location"><span class="nico">📍</span><span class="nlabel i18n-ko">오시는길</span><span class="nlabel i18n-en">Location</span></button>
   </div>
@@ -1009,7 +1021,7 @@ var MENTOR_GROUPS = [
   {id:4, mentorKo:'이채원', mentorEn:'Chaewon Lee', deptKo:'전산학부', deptEn:'School of Computing', course:'1', students:['이도영','이서은','김재윤','정다예']},
   {id:5, mentorKo:'서혜연', mentorEn:'Hyeyeon Seo', deptKo:'산업디자인학과', deptEn:'Dept. of Industrial Design', course:'4', students:['이선우','이해원','김태은','정세민']},
   {id:6, mentorKo:'김주해', mentorEn:'Juhae Kim', deptKo:'전기및전자공학부', deptEn:'School of Electrical Engineering', course:'2', students:['정우찬','정율희','김효빈','한은서']},
-  {id:7, mentorKo:'김지영', mentorEn:'Jiyoung Kim', deptKo:'디지털인문사회과학부', deptEn:'Dept. of Digital Humanities & Social Sciences', course:'3', students:['최준','한아람','강나연']}
+  {id:7, mentorKo:'박경호', mentorEn:'Kyungho Park', deptKo:'산업디자인학과', deptEn:'Dept. of Industrial Design', course:'3', students:['최준','한아람','강나연']}
 ];
 var STUDENT_MENTOR = {};
 MENTOR_GROUPS.forEach(function(g){
@@ -1052,6 +1064,17 @@ document.querySelectorAll('.participant-chip').forEach(function(chip){
 document.getElementById('studentModalClose').addEventListener('click', closeStudentModal);
 document.getElementById('studentModal').addEventListener('click', function(e){
   if(e.target.id === 'studentModal'){ closeStudentModal(); }
+});
+
+// ---------- participants/mentors tabs ----------
+document.querySelectorAll('.ptab-btn').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var key = btn.getAttribute('data-ptab');
+    document.querySelectorAll('.ptab-btn').forEach(function(b){ b.classList.toggle('active', b === btn); });
+    document.querySelectorAll('.ptab-panel').forEach(function(p){
+      p.classList.toggle('active', p.getAttribute('data-ptab-panel') === key);
+    });
+  });
 });
 </script>
 
