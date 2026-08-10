@@ -331,6 +331,12 @@
     background:var(--paper); border-radius:var(--radius); box-shadow:var(--shadow); padding:12px 14px; margin-bottom:8px;
   }
   .mentor-card-head{display:flex; align-items:center; gap:8px; margin-bottom:6px;}
+  .mentor-route{
+    margin-left:auto; flex:none; background:var(--peach-dim); color:var(--terracotta);
+    font-family:var(--sans); font-weight:800; font-size:11px; padding:4px 10px; border-radius:999px; white-space:nowrap;
+    cursor:pointer;
+  }
+  .mentor-route:active{opacity:0.7;}
   .mentor-badge{
     background:var(--ink-deep); color:var(--peach-soft); font-family:var(--serif); font-weight:800; font-size:11px;
     padding:3px 9px; border-radius:999px; flex:none;
@@ -534,7 +540,7 @@
           <div class="sg2-ev hl i18n-ko" style="grid-column:2; grid-row:3/5;"><b>기조강연 Art as Research</b><span>잭 리버먼 · 10:30–11:30</span></div><div class="sg2-ev hl i18n-en" style="grid-column:2; grid-row:3/5;"><b>Keynote: Art as Research</b><span>Zach Lieberman · 10:30–11:30</span></div>
           <div class="sg2-ev lunch i18n-ko" style="grid-column:2; grid-row:5/8;"><b>점심</b><span>11:30–13:00</span></div><div class="sg2-ev lunch i18n-en" style="grid-column:2; grid-row:5/8;"><b>Lunch</b><span>11:30–13:00</span></div>
           <div class="sg2-ev hl i18n-ko" style="grid-column:2; grid-row:8/10;"><b>Mapping as Artistic Practice</b><span>잭 리버먼 · 13:00–14:00</span></div><div class="sg2-ev hl i18n-en" style="grid-column:2; grid-row:8/10;"><b>Mapping as Artistic Practice</b><span>Zach Lieberman · 13:00–14:00</span></div>
-          <div class="sg2-ev map-trigger i18n-ko" style="grid-column:2; grid-row:10/14;" data-map-open="1"><b>캠퍼스 걷고, 기록하기</b><span>14:00–16:00</span><span class="sg2-ev-tag">지도 보기 →</span></div><div class="sg2-ev map-trigger i18n-en" style="grid-column:2; grid-row:10/14;" data-map-open="1"><b>Walking &amp; Documenting Campus</b><span>14:00–16:00</span><span class="sg2-ev-tag">View Map →</span></div>
+          <div class="sg2-ev map-trigger i18n-ko" style="grid-column:2; grid-row:10/14;" data-map-open="base"><b>캠퍼스 걷고, 기록하기</b><span>14:00–16:00</span><span class="sg2-ev-tag">지도 보기 →</span></div><div class="sg2-ev map-trigger i18n-en" style="grid-column:2; grid-row:10/14;" data-map-open="base"><b>Walking &amp; Documenting Campus</b><span>14:00–16:00</span><span class="sg2-ev-tag">View Map →</span></div>
           <div class="sg2-ev i18n-ko" style="grid-column:2; grid-row:14/16;"><b>발견의 공유: 나만의 주제 찾기</b><span>16:00–17:00</span></div><div class="sg2-ev i18n-en" style="grid-column:2; grid-row:14/16;"><b>Sharing Discoveries: Finding My Theme</b><span>16:00–17:00</span></div>
           <div class="sg2-ev i18n-ko" style="grid-column:2; grid-row:16/18;"><b>정리/성장노트</b><span>17:00–18:00</span></div><div class="sg2-ev i18n-en" style="grid-column:2; grid-row:16/18;"><b>Wrap-up / Growth Journal</b><span>17:00–18:00</span></div>
 
@@ -722,6 +728,7 @@
             <div>
               <div class="mentor-name i18n-ko">임예린</div><div class="mentor-name i18n-en">Yerin Lim</div>
             </div>
+            <div class="mentor-route i18n-ko" data-map-open="route1">루트 1</div><div class="mentor-route i18n-en" data-map-open="route1">Route 1</div>
           </div>
           <div class="mentor-students i18n-ko">담당 학생: 김소연, 김수아, 이도연, 강민서</div><div class="mentor-students i18n-en">Students: Soyeon Kim, Sua Kim, Doyeon Lee, Minseo Kang</div>
         </div>
@@ -731,6 +738,7 @@
             <div>
               <div class="mentor-name i18n-ko">여남규</div><div class="mentor-name i18n-en">Namgyu Yeo</div>
             </div>
+            <div class="mentor-route i18n-ko" data-map-open="route2">루트 2</div><div class="mentor-route i18n-en" data-map-open="route2">Route 2</div>
           </div>
           <div class="mentor-students i18n-ko">담당 학생: 김지안, 서멜린다, 추하율, 김민서</div><div class="mentor-students i18n-en">Students: Jian Kim, Melinda Seo, Hayul Chu, Minseo Kim</div>
         </div>
@@ -740,6 +748,7 @@
             <div>
               <div class="mentor-name i18n-ko">명소영</div><div class="mentor-name i18n-en">Soyoung Myeong</div>
             </div>
+            <div class="mentor-route i18n-ko" data-map-open="route3">루트 3</div><div class="mentor-route i18n-en" data-map-open="route3">Route 3</div>
           </div>
           <div class="mentor-students i18n-ko">담당 학생: 손채원, 심서현, 강윤하, 김윤지</div><div class="mentor-students i18n-en">Students: Chaewon Son, Seohyun Sim, Yoonha Kang, Yoonji Kim</div>
         </div>
@@ -749,6 +758,7 @@
             <div>
               <div class="mentor-name i18n-ko">이채원</div><div class="mentor-name i18n-en">Chaewon Lee</div>
             </div>
+            <div class="mentor-route i18n-ko" data-map-open="route1">루트 1</div><div class="mentor-route i18n-en" data-map-open="route1">Route 1</div>
           </div>
           <div class="mentor-students i18n-ko">담당 학생: 이도영, 이서은, 김재윤, 정다예</div><div class="mentor-students i18n-en">Students: Doyoung Lee, Seoeun Lee, Jaeyoon Kim, Daye Jung</div>
         </div>
@@ -758,6 +768,7 @@
             <div>
               <div class="mentor-name i18n-ko">서혜연</div><div class="mentor-name i18n-en">Hyeyeon Seo</div>
             </div>
+            <div class="mentor-route i18n-ko" data-map-open="route4">루트 4</div><div class="mentor-route i18n-en" data-map-open="route4">Route 4</div>
           </div>
           <div class="mentor-students i18n-ko">담당 학생: 이선우, 이해원, 김태은, 정세민</div><div class="mentor-students i18n-en">Students: Sunwoo Lee, Haewon Lee, Taeeun Kim, Semin Jung</div>
         </div>
@@ -767,6 +778,7 @@
             <div>
               <div class="mentor-name i18n-ko">김주해</div><div class="mentor-name i18n-en">Juhae Kim</div>
             </div>
+            <div class="mentor-route i18n-ko" data-map-open="route2">루트 2</div><div class="mentor-route i18n-en" data-map-open="route2">Route 2</div>
           </div>
           <div class="mentor-students i18n-ko">담당 학생: 정우찬, 정율희, 김효빈, 한은서</div><div class="mentor-students i18n-en">Students: Woochan Jung, Yulhee Jung, Hyobin Kim, Eunseo Han</div>
         </div>
@@ -776,6 +788,7 @@
             <div>
               <div class="mentor-name i18n-ko">박경호</div><div class="mentor-name i18n-en">Kyungho Park</div>
             </div>
+            <div class="mentor-route i18n-ko" data-map-open="route3">루트 3</div><div class="mentor-route i18n-en" data-map-open="route3">Route 3</div>
           </div>
           <div class="mentor-students i18n-ko">담당 학생: 최준, 한아람, 강나연</div><div class="mentor-students i18n-en">Students: Jun Choi, Aram Han, Nayeon Kang</div>
         </div>
@@ -993,8 +1006,8 @@ function setMapRoute(key){
   });
   document.querySelector('.map-modal-body').scrollTop = 0;
 }
-function openMapModal(){
-  setMapRoute('base');
+function openMapModal(routeKey){
+  setMapRoute(routeKey || 'base');
   document.getElementById('mapModal').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
@@ -1003,7 +1016,7 @@ function closeMapModal(){
   document.body.style.overflow = '';
 }
 document.querySelectorAll('[data-map-open]').forEach(function(el){
-  el.addEventListener('click', openMapModal);
+  el.addEventListener('click', function(){ openMapModal(el.getAttribute('data-map-open')); });
 });
 document.getElementById('mapModalClose').addEventListener('click', closeMapModal);
 document.getElementById('mapModal').addEventListener('click', function(e){
