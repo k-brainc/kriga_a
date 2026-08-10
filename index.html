@@ -321,16 +321,11 @@
   .student-modal-value{color:var(--ink); font-weight:700; text-align:right;}
 
   /* ---------- mentor groups ---------- */
-  .ptab-switch{display:flex; gap:6px; background:var(--cream); padding:4px; border-radius:999px; margin-bottom:14px;}
-  .ptab-btn{flex:1; border:none; background:transparent; color:var(--ink-soft); font-family:var(--sans); font-weight:800; font-size:13px; padding:9px 0; border-radius:999px; cursor:pointer;}
-  .ptab-btn.active{background:var(--ink-deep); color:var(--peach-soft);}
-  .ptab-panel{display:none;}
-  .ptab-panel.active{display:block;}
   .mentor-list{margin-top:10px;}
   .mentor-card{
     background:var(--paper); border-radius:var(--radius); box-shadow:var(--shadow); padding:12px 14px; margin-bottom:8px;
   }
-  .mentor-card-head{display:flex; align-items:center; gap:8px; margin-bottom:6px;}
+  .mentor-card-head{display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin-bottom:6px;}
   .mentor-route{
     margin-left:auto; flex:none; background:var(--peach-dim); color:var(--terracotta);
     font-family:var(--sans); font-weight:800; font-size:11px; padding:4px 10px; border-radius:999px; white-space:nowrap;
@@ -342,7 +337,6 @@
     padding:3px 9px; border-radius:999px; flex:none;
   }
   .mentor-name{font-family:var(--serif); font-weight:800; font-size:14.5px; color:var(--ink);}
-  .mentor-students{font-size:13px; color:var(--ink-soft); line-height:1.6; margin-top:2px;}
 
   /* ---------- floor guide ---------- */
   .floor-list{background:var(--paper); border-radius:var(--radius); box-shadow:var(--shadow); padding:6px 16px;}
@@ -682,115 +676,110 @@
       </div>
     </div>
     <div class="page-body">
-      <div class="ptab-switch">
-        <button class="ptab-btn active" data-ptab="students"><span class="i18n-ko">참가자</span><span class="i18n-en">Participants</span></button>
-        <button class="ptab-btn" data-ptab="mentors"><span class="i18n-ko">생활멘토</span><span class="i18n-en">Life Mentors</span></button>
-      </div>
-      <div class="ptab-panel active" data-ptab-panel="students">
-      <div class="draft-banner i18n-ko">※ 미술분야 워크숍 참여학생 명단입니다. (무순)</div><div class="draft-banner i18n-en">※ List of Visual Arts Workshop participants. (Unordered)</div>
-      <div class="participant-grid" style="margin-top:14px;">
-        <div class="participant-chip"><div class="pname i18n-ko">이해원</div><div class="pname i18n-en">Haewon Lee</div><div class="pschool i18n-ko">불당중 · 1학년</div><div class="pschool i18n-en">Buldang Middle School · Grade 1</div></div>
-        <div class="participant-chip"><div class="pname i18n-ko">김효빈</div><div class="pname i18n-en">Hyobin Kim</div><div class="pschool i18n-ko">남목중 · 3학년</div><div class="pschool i18n-en">Nammok Middle School · Grade 3</div></div>
-        <div class="participant-chip"><div class="pname i18n-ko">강민서</div><div class="pname i18n-en">Minseo Kang</div><div class="pschool i18n-ko">홈스쿨링 · 1학년</div><div class="pschool i18n-en">Homeschool · Grade 1</div></div>
-        <div class="participant-chip"><div class="pname i18n-ko">김지안</div><div class="pname i18n-en">Jian Kim</div><div class="pschool i18n-ko">포항여중 · 1학년</div><div class="pschool i18n-en">Pohang Girls' Middle School · Grade 1</div></div>
-        <div class="participant-chip"><div class="pname i18n-ko">추하율</div><div class="pname i18n-en">Hayul Chu</div><div class="pschool i18n-ko">위례중 · 2학년</div><div class="pschool i18n-en">Wirye Middle School · Grade 2</div></div>
-        <div class="participant-chip"><div class="pname i18n-ko">이서은</div><div class="pname i18n-en">Seoeun Lee</div><div class="pschool i18n-ko">천안오성중 · 1학년</div><div class="pschool i18n-en">Cheonan Oseong Middle School · Grade 1</div></div>
-        <div class="participant-chip"><div class="pname i18n-ko">정세민</div><div class="pname i18n-en">Semin Jung</div><div class="pschool i18n-ko">죽전고 · 1학년</div><div class="pschool i18n-en">Jukjeon High School · Grade 1</div></div>
-        <div class="participant-chip"><div class="pname i18n-ko">한아람</div><div class="pname i18n-en">Aram Han</div><div class="pschool i18n-ko">배화여중 · 1학년</div><div class="pschool i18n-en">Baehwa Girls' Middle School · Grade 1</div></div>
-        <div class="participant-chip"><div class="pname i18n-ko">정우찬</div><div class="pname i18n-en">Woochan Jung</div><div class="pschool i18n-ko">서원중 · 1학년</div><div class="pschool i18n-en">Seowon Middle School · Grade 1</div></div>
-        <div class="participant-chip"><div class="pname i18n-ko">김소연</div><div class="pname i18n-en">Soyeon Kim</div><div class="pschool i18n-ko">예원학교 · 1학년</div><div class="pschool i18n-en">Yewon School · Grade 1</div></div>
-        <div class="participant-chip"><div class="pname i18n-ko">강윤하</div><div class="pname i18n-en">Yoonha Kang</div><div class="pschool i18n-ko">동대문중 · 3학년</div><div class="pschool i18n-en">Dongdaemun Middle School · Grade 3</div></div>
-        <div class="participant-chip"><div class="pname i18n-ko">강나연</div><div class="pname i18n-en">Nayeon Kang</div><div class="pschool i18n-ko">세종예고 · 1학년</div><div class="pschool i18n-en">Sejong Arts High School · Grade 1</div></div>
-        <div class="participant-chip"><div class="pname i18n-ko">최준</div><div class="pname i18n-en">Jun Choi</div><div class="pschool i18n-ko">자양중 · 1학년</div><div class="pschool i18n-en">Jayang Middle School · Grade 1</div></div>
-        <div class="participant-chip"><div class="pname i18n-ko">손채원</div><div class="pname i18n-en">Chaewon Son</div><div class="pschool i18n-ko">신명여중 · 1학년</div><div class="pschool i18n-en">Sinmyeong Girls' Middle School · Grade 1</div></div>
-        <div class="participant-chip"><div class="pname i18n-ko">이도연</div><div class="pname i18n-en">Doyeon Lee</div><div class="pschool i18n-ko">분당구미중 · 2학년</div><div class="pschool i18n-en">Bundang Gumi Middle School · Grade 2</div></div>
-        <div class="participant-chip"><div class="pname i18n-ko">김윤지</div><div class="pname i18n-en">Yoonji Kim</div><div class="pschool i18n-ko">덕원예고 · 1학년</div><div class="pschool i18n-en">Deokwon Arts High School · Grade 1</div></div>
-        <div class="participant-chip"><div class="pname i18n-ko">김수아</div><div class="pname i18n-en">Sua Kim</div><div class="pschool i18n-ko">성서중 · 1학년</div><div class="pschool i18n-en">Seongseo Middle School · Grade 1</div></div>
-        <div class="participant-chip"><div class="pname i18n-ko">심서현</div><div class="pname i18n-en">Seohyun Sim</div><div class="pschool i18n-ko">광주예중 · 1학년</div><div class="pschool i18n-en">Gwangju Arts Middle School · Grade 1</div></div>
-        <div class="participant-chip"><div class="pname i18n-ko">정다예</div><div class="pname i18n-en">Daye Jung</div><div class="pschool i18n-ko">덕원예고 · 1학년</div><div class="pschool i18n-en">Deokwon Arts High School · Grade 1</div></div>
-        <div class="participant-chip"><div class="pname i18n-ko">서멜린다</div><div class="pname i18n-en">Melinda Seo</div><div class="pschool i18n-ko">언동중 · 1학년</div><div class="pschool i18n-en">Eondong Middle School · Grade 1</div></div>
-        <div class="participant-chip"><div class="pname i18n-ko">한은서</div><div class="pname i18n-en">Eunseo Han</div><div class="pschool i18n-ko">홈스쿨링 · 1학년</div><div class="pschool i18n-en">Homeschool · Grade 1</div></div>
-        <div class="participant-chip"><div class="pname i18n-ko">김민서</div><div class="pname i18n-en">Minseo Kim</div><div class="pschool i18n-ko">성희여고 · 1학년</div><div class="pschool i18n-en">Seonghui Girls' High School · Grade 1</div></div>
-        <div class="participant-chip"><div class="pname i18n-ko">김재윤</div><div class="pname i18n-en">Jaeyoon Kim</div><div class="pschool i18n-ko">포항제철중 · 3학년</div><div class="pschool i18n-en">Pohang Jecheol Middle School · Grade 3</div></div>
-        <div class="participant-chip"><div class="pname i18n-ko">김태은</div><div class="pname i18n-en">Taeeun Kim</div><div class="pschool i18n-ko">용인한빛중 · 3학년</div><div class="pschool i18n-en">Yongin Hanbit Middle School · Grade 3</div></div>
-        <div class="participant-chip"><div class="pname i18n-ko">이도영</div><div class="pname i18n-en">Doyoung Lee</div><div class="pschool i18n-ko">천안불당중 · 1학년</div><div class="pschool i18n-en">Cheonan Buldang Middle School · Grade 1</div></div>
-        <div class="participant-chip"><div class="pname i18n-ko">이선우</div><div class="pname i18n-en">Sunwoo Lee</div><div class="pschool i18n-ko">대구제일중 · 1학년</div><div class="pschool i18n-en">Daegu Jeil Middle School · Grade 1</div></div>
-        <div class="participant-chip"><div class="pname i18n-ko">정율희</div><div class="pname i18n-en">Yulhee Jung</div><div class="pschool i18n-ko">천안월봉중 · 1학년</div><div class="pschool i18n-en">Cheonan Wolbong Middle School · Grade 1</div></div>
-      </div>
-      </div>
-
-      <div class="ptab-panel" data-ptab-panel="mentors">
-      <div class="draft-banner i18n-ko">※ 카이스트 재학생 생활멘토 7개 조로 편성되어 함께 캠퍼스를 탐방합니다.</div><div class="draft-banner i18n-en">※ KAIST student life mentors are organized into 7 groups to explore campus together with participants.</div>
+      <div class="draft-banner i18n-ko">※ 미술분야 워크숍 참가자와 생활멘토 조 편성입니다. 이름을 누르면 상세 정보를 볼 수 있어요.</div><div class="draft-banner i18n-en">※ Visual Arts Workshop participants organized by life mentor team. Tap a name for details.</div>
       <div class="mentor-list">
-        <div class="mentor-card">
-          <div class="mentor-card-head">
-            <div class="mentor-badge i18n-ko">1조</div><div class="mentor-badge i18n-en">Group 1</div>
-            <div>
-              <div class="mentor-name i18n-ko">임예린</div><div class="mentor-name i18n-en">Yerin Lim</div>
-            </div>
-            <div class="mentor-route i18n-ko" data-map-open="route1">루트 1</div><div class="mentor-route i18n-en" data-map-open="route1">Route 1</div>
+      <div class="mentor-card">
+        <div class="mentor-card-head">
+          <div class="mentor-badge i18n-ko">1조 · 뭐하조</div><div class="mentor-badge i18n-en">Group 1 · Mwohajo</div>
+          <div>
+            <div class="mentor-name i18n-ko">임예린</div><div class="mentor-name i18n-en">Yerin Lim</div>
           </div>
-          <div class="mentor-students i18n-ko">담당 학생: 김소연, 김수아, 이도연, 강민서</div><div class="mentor-students i18n-en">Students: Soyeon Kim, Sua Kim, Doyeon Lee, Minseo Kang</div>
+          <div class="mentor-route i18n-ko" data-map-open="route1">루트 1</div><div class="mentor-route i18n-en" data-map-open="route1">Route 1</div>
         </div>
-        <div class="mentor-card">
-          <div class="mentor-card-head">
-            <div class="mentor-badge i18n-ko">2조</div><div class="mentor-badge i18n-en">Group 2</div>
-            <div>
-              <div class="mentor-name i18n-ko">여남규</div><div class="mentor-name i18n-en">Namgyu Yeo</div>
-            </div>
-            <div class="mentor-route i18n-ko" data-map-open="route2">루트 2</div><div class="mentor-route i18n-en" data-map-open="route2">Route 2</div>
-          </div>
-          <div class="mentor-students i18n-ko">담당 학생: 김지안, 서멜린다, 추하율, 김민서</div><div class="mentor-students i18n-en">Students: Jian Kim, Melinda Seo, Hayul Chu, Minseo Kim</div>
+        <div class="participant-grid" style="margin-top:10px;">
+          <div class="participant-chip"><div class="pname i18n-ko">김소연</div><div class="pname i18n-en">Soyeon Kim</div><div class="pschool i18n-ko">예원학교 · 1학년</div><div class="pschool i18n-en">Yewon School · Grade 1</div></div>
+          <div class="participant-chip"><div class="pname i18n-ko">김수아</div><div class="pname i18n-en">Sua Kim</div><div class="pschool i18n-ko">성서중 · 1학년</div><div class="pschool i18n-en">Seongseo Middle School · Grade 1</div></div>
+          <div class="participant-chip"><div class="pname i18n-ko">이도연</div><div class="pname i18n-en">Doyeon Lee</div><div class="pschool i18n-ko">분당구미중 · 2학년</div><div class="pschool i18n-en">Bundang Gumi Middle School · Grade 2</div></div>
+          <div class="participant-chip"><div class="pname i18n-ko">강민서</div><div class="pname i18n-en">Minseo Kang</div><div class="pschool i18n-ko">홈스쿨링 · 1학년</div><div class="pschool i18n-en">Homeschool · Grade 1</div></div>
         </div>
-        <div class="mentor-card">
-          <div class="mentor-card-head">
-            <div class="mentor-badge i18n-ko">3조</div><div class="mentor-badge i18n-en">Group 3</div>
-            <div>
-              <div class="mentor-name i18n-ko">명소영</div><div class="mentor-name i18n-en">Soyoung Myeong</div>
-            </div>
-            <div class="mentor-route i18n-ko" data-map-open="route3">루트 3</div><div class="mentor-route i18n-en" data-map-open="route3">Route 3</div>
+      </div>
+      <div class="mentor-card">
+        <div class="mentor-card-head">
+          <div class="mentor-badge i18n-ko">2조 · 아이들</div><div class="mentor-badge i18n-en">Group 2 · The Kids</div>
+          <div>
+            <div class="mentor-name i18n-ko">여남규</div><div class="mentor-name i18n-en">Namgyu Yeo</div>
           </div>
-          <div class="mentor-students i18n-ko">담당 학생: 손채원, 심서현, 강윤하, 김윤지</div><div class="mentor-students i18n-en">Students: Chaewon Son, Seohyun Sim, Yoonha Kang, Yoonji Kim</div>
+          <div class="mentor-route i18n-ko" data-map-open="route2">루트 2</div><div class="mentor-route i18n-en" data-map-open="route2">Route 2</div>
         </div>
-        <div class="mentor-card">
-          <div class="mentor-card-head">
-            <div class="mentor-badge i18n-ko">4조</div><div class="mentor-badge i18n-en">Group 4</div>
-            <div>
-              <div class="mentor-name i18n-ko">이채원</div><div class="mentor-name i18n-en">Chaewon Lee</div>
-            </div>
-            <div class="mentor-route i18n-ko" data-map-open="route1">루트 1</div><div class="mentor-route i18n-en" data-map-open="route1">Route 1</div>
-          </div>
-          <div class="mentor-students i18n-ko">담당 학생: 이도영, 이서은, 김재윤, 정다예</div><div class="mentor-students i18n-en">Students: Doyoung Lee, Seoeun Lee, Jaeyoon Kim, Daye Jung</div>
+        <div class="participant-grid" style="margin-top:10px;">
+          <div class="participant-chip"><div class="pname i18n-ko">김지안</div><div class="pname i18n-en">Jian Kim</div><div class="pschool i18n-ko">포항여중 · 1학년</div><div class="pschool i18n-en">Pohang Girls' Middle School · Grade 1</div></div>
+          <div class="participant-chip"><div class="pname i18n-ko">서멜린다</div><div class="pname i18n-en">Melinda Seo</div><div class="pschool i18n-ko">언동중 · 1학년</div><div class="pschool i18n-en">Eondong Middle School · Grade 1</div></div>
+          <div class="participant-chip"><div class="pname i18n-ko">추하율</div><div class="pname i18n-en">Hayul Chu</div><div class="pschool i18n-ko">위례중 · 2학년</div><div class="pschool i18n-en">Wirye Middle School · Grade 2</div></div>
+          <div class="participant-chip"><div class="pname i18n-ko">김민서</div><div class="pname i18n-en">Minseo Kim</div><div class="pschool i18n-ko">성희여고 · 1학년</div><div class="pschool i18n-en">Seonghui Girls' High School · Grade 1</div></div>
         </div>
-        <div class="mentor-card">
-          <div class="mentor-card-head">
-            <div class="mentor-badge i18n-ko">5조</div><div class="mentor-badge i18n-en">Group 5</div>
-            <div>
-              <div class="mentor-name i18n-ko">서혜연</div><div class="mentor-name i18n-en">Hyeyeon Seo</div>
-            </div>
-            <div class="mentor-route i18n-ko" data-map-open="route4">루트 4</div><div class="mentor-route i18n-en" data-map-open="route4">Route 4</div>
+      </div>
+      <div class="mentor-card">
+        <div class="mentor-card-head">
+          <div class="mentor-badge i18n-ko">3조 · 26</div><div class="mentor-badge i18n-en">Group 3 · 26</div>
+          <div>
+            <div class="mentor-name i18n-ko">명소영</div><div class="mentor-name i18n-en">Soyoung Myeong</div>
           </div>
-          <div class="mentor-students i18n-ko">담당 학생: 이선우, 이해원, 김태은, 정세민</div><div class="mentor-students i18n-en">Students: Sunwoo Lee, Haewon Lee, Taeeun Kim, Semin Jung</div>
+          <div class="mentor-route i18n-ko" data-map-open="route3">루트 3</div><div class="mentor-route i18n-en" data-map-open="route3">Route 3</div>
         </div>
-        <div class="mentor-card">
-          <div class="mentor-card-head">
-            <div class="mentor-badge i18n-ko">6조</div><div class="mentor-badge i18n-en">Group 6</div>
-            <div>
-              <div class="mentor-name i18n-ko">김주해</div><div class="mentor-name i18n-en">Juhae Kim</div>
-            </div>
-            <div class="mentor-route i18n-ko" data-map-open="route2">루트 2</div><div class="mentor-route i18n-en" data-map-open="route2">Route 2</div>
-          </div>
-          <div class="mentor-students i18n-ko">담당 학생: 정우찬, 정율희, 김효빈, 한은서</div><div class="mentor-students i18n-en">Students: Woochan Jung, Yulhee Jung, Hyobin Kim, Eunseo Han</div>
+        <div class="participant-grid" style="margin-top:10px;">
+          <div class="participant-chip"><div class="pname i18n-ko">손채원</div><div class="pname i18n-en">Chaewon Son</div><div class="pschool i18n-ko">신명여중 · 1학년</div><div class="pschool i18n-en">Sinmyeong Girls' Middle School · Grade 1</div></div>
+          <div class="participant-chip"><div class="pname i18n-ko">심서현</div><div class="pname i18n-en">Seohyun Sim</div><div class="pschool i18n-ko">광주예중 · 1학년</div><div class="pschool i18n-en">Gwangju Arts Middle School · Grade 1</div></div>
+          <div class="participant-chip"><div class="pname i18n-ko">강윤하</div><div class="pname i18n-en">Yoonha Kang</div><div class="pschool i18n-ko">동대문중 · 3학년</div><div class="pschool i18n-en">Dongdaemun Middle School · Grade 3</div></div>
+          <div class="participant-chip"><div class="pname i18n-ko">김윤지</div><div class="pname i18n-en">Yoonji Kim</div><div class="pschool i18n-ko">덕원예고 · 1학년</div><div class="pschool i18n-en">Deokwon Arts High School · Grade 1</div></div>
         </div>
-        <div class="mentor-card">
-          <div class="mentor-card-head">
-            <div class="mentor-badge i18n-ko">7조</div><div class="mentor-badge i18n-en">Group 7</div>
-            <div>
-              <div class="mentor-name i18n-ko">박경호</div><div class="mentor-name i18n-en">Kyungho Park</div>
-            </div>
-            <div class="mentor-route i18n-ko" data-map-open="route3">루트 3</div><div class="mentor-route i18n-en" data-map-open="route3">Route 3</div>
+      </div>
+      <div class="mentor-card">
+        <div class="mentor-card-head">
+          <div class="mentor-badge i18n-ko">4조 · 사방팔방</div><div class="mentor-badge i18n-en">Group 4 · All Directions</div>
+          <div>
+            <div class="mentor-name i18n-ko">이채원</div><div class="mentor-name i18n-en">Chaewon Lee</div>
           </div>
-          <div class="mentor-students i18n-ko">담당 학생: 최준, 한아람, 강나연</div><div class="mentor-students i18n-en">Students: Jun Choi, Aram Han, Nayeon Kang</div>
+          <div class="mentor-route i18n-ko" data-map-open="route1">루트 1</div><div class="mentor-route i18n-en" data-map-open="route1">Route 1</div>
+        </div>
+        <div class="participant-grid" style="margin-top:10px;">
+          <div class="participant-chip"><div class="pname i18n-ko">이도영</div><div class="pname i18n-en">Doyoung Lee</div><div class="pschool i18n-ko">천안불당중 · 1학년</div><div class="pschool i18n-en">Cheonan Buldang Middle School · Grade 1</div></div>
+          <div class="participant-chip"><div class="pname i18n-ko">이서은</div><div class="pname i18n-en">Seoeun Lee</div><div class="pschool i18n-ko">천안오성중 · 1학년</div><div class="pschool i18n-en">Cheonan Oseong Middle School · Grade 1</div></div>
+          <div class="participant-chip"><div class="pname i18n-ko">김재윤</div><div class="pname i18n-en">Jaeyoon Kim</div><div class="pschool i18n-ko">포항제철중 · 3학년</div><div class="pschool i18n-en">Pohang Jecheol Middle School · Grade 3</div></div>
+          <div class="participant-chip"><div class="pname i18n-ko">정다예</div><div class="pname i18n-en">Daye Jung</div><div class="pschool i18n-ko">덕원예고 · 1학년</div><div class="pschool i18n-en">Deokwon Arts High School · Grade 1</div></div>
+        </div>
+      </div>
+      <div class="mentor-card">
+        <div class="mentor-card-head">
+          <div class="mentor-badge i18n-ko">5조 · 하이파이브</div><div class="mentor-badge i18n-en">Group 5 · High Five</div>
+          <div>
+            <div class="mentor-name i18n-ko">서혜연</div><div class="mentor-name i18n-en">Hyeyeon Seo</div>
+          </div>
+          <div class="mentor-route i18n-ko" data-map-open="route4">루트 4</div><div class="mentor-route i18n-en" data-map-open="route4">Route 4</div>
+        </div>
+        <div class="participant-grid" style="margin-top:10px;">
+          <div class="participant-chip"><div class="pname i18n-ko">이선우</div><div class="pname i18n-en">Sunwoo Lee</div><div class="pschool i18n-ko">대구제일중 · 1학년</div><div class="pschool i18n-en">Daegu Jeil Middle School · Grade 1</div></div>
+          <div class="participant-chip"><div class="pname i18n-ko">이해원</div><div class="pname i18n-en">Haewon Lee</div><div class="pschool i18n-ko">불당중 · 1학년</div><div class="pschool i18n-en">Buldang Middle School · Grade 1</div></div>
+          <div class="participant-chip"><div class="pname i18n-ko">김태은</div><div class="pname i18n-en">Taeeun Kim</div><div class="pschool i18n-ko">용인한빛중 · 3학년</div><div class="pschool i18n-en">Yongin Hanbit Middle School · Grade 3</div></div>
+          <div class="participant-chip"><div class="pname i18n-ko">정세민</div><div class="pname i18n-en">Semin Jung</div><div class="pschool i18n-ko">죽전고 · 1학년</div><div class="pschool i18n-en">Jukjeon High School · Grade 1</div></div>
+        </div>
+      </div>
+      <div class="mentor-card">
+        <div class="mentor-card-head">
+          <div class="mentor-badge i18n-ko">6조 · 주해와 아이들</div><div class="mentor-badge i18n-en">Group 6 · Juhae & the Kids</div>
+          <div>
+            <div class="mentor-name i18n-ko">김주해</div><div class="mentor-name i18n-en">Juhae Kim</div>
+          </div>
+          <div class="mentor-route i18n-ko" data-map-open="route2">루트 2</div><div class="mentor-route i18n-en" data-map-open="route2">Route 2</div>
+        </div>
+        <div class="participant-grid" style="margin-top:10px;">
+          <div class="participant-chip"><div class="pname i18n-ko">정우찬</div><div class="pname i18n-en">Woochan Jung</div><div class="pschool i18n-ko">서원중 · 1학년</div><div class="pschool i18n-en">Seowon Middle School · Grade 1</div></div>
+          <div class="participant-chip"><div class="pname i18n-ko">정율희</div><div class="pname i18n-en">Yulhee Jung</div><div class="pschool i18n-ko">천안월봉중 · 1학년</div><div class="pschool i18n-en">Cheonan Wolbong Middle School · Grade 1</div></div>
+          <div class="participant-chip"><div class="pname i18n-ko">김효빈</div><div class="pname i18n-en">Hyobin Kim</div><div class="pschool i18n-ko">남목중 · 3학년</div><div class="pschool i18n-en">Nammok Middle School · Grade 3</div></div>
+          <div class="participant-chip"><div class="pname i18n-ko">한은서</div><div class="pname i18n-en">Eunseo Han</div><div class="pschool i18n-ko">홈스쿨링 · 1학년</div><div class="pschool i18n-en">Homeschool · Grade 1</div></div>
+        </div>
+      </div>
+      <div class="mentor-card">
+        <div class="mentor-card-head">
+          <div class="mentor-badge i18n-ko">7조 · 최강박하사탕</div><div class="mentor-badge i18n-en">Group 7 · Ultimate Peppermint Candy</div>
+          <div>
+            <div class="mentor-name i18n-ko">박경호</div><div class="mentor-name i18n-en">Kyungho Park</div>
+          </div>
+          <div class="mentor-route i18n-ko" data-map-open="route3">루트 3</div><div class="mentor-route i18n-en" data-map-open="route3">Route 3</div>
+        </div>
+        <div class="participant-grid" style="margin-top:10px;">
+          <div class="participant-chip"><div class="pname i18n-ko">최준</div><div class="pname i18n-en">Jun Choi</div><div class="pschool i18n-ko">자양중 · 1학년</div><div class="pschool i18n-en">Jayang Middle School · Grade 1</div></div>
+          <div class="participant-chip"><div class="pname i18n-ko">한아람</div><div class="pname i18n-en">Aram Han</div><div class="pschool i18n-ko">배화여중 · 1학년</div><div class="pschool i18n-en">Baehwa Girls' Middle School · Grade 1</div></div>
+          <div class="participant-chip"><div class="pname i18n-ko">강나연</div><div class="pname i18n-en">Nayeon Kang</div><div class="pschool i18n-ko">세종예고 · 1학년</div><div class="pschool i18n-en">Sejong Arts High School · Grade 1</div></div>
         </div>
       </div>
       </div>
@@ -1028,13 +1017,13 @@ document.querySelectorAll('.map-route-btn').forEach(function(b){
 
 // ---------- student info modal ----------
 var MENTOR_GROUPS = [
-  {id:1, mentorKo:'임예린', mentorEn:'Yerin Lim', deptKo:'산업디자인학과', deptEn:'Dept. of Industrial Design', course:'1', students:['김소연','김수아','이도연','강민서']},
-  {id:2, mentorKo:'여남규', mentorEn:'Namgyu Yeo', deptKo:'산업디자인학과', deptEn:'Dept. of Industrial Design', course:'2', students:['김지안','서멜린다','추하율','김민서']},
-  {id:3, mentorKo:'명소영', mentorEn:'Soyoung Myeong', deptKo:'산업디자인학과', deptEn:'Dept. of Industrial Design', course:'3', students:['손채원','심서현','강윤하','김윤지']},
-  {id:4, mentorKo:'이채원', mentorEn:'Chaewon Lee', deptKo:'전산학부', deptEn:'School of Computing', course:'1', students:['이도영','이서은','김재윤','정다예']},
-  {id:5, mentorKo:'서혜연', mentorEn:'Hyeyeon Seo', deptKo:'산업디자인학과', deptEn:'Dept. of Industrial Design', course:'4', students:['이선우','이해원','김태은','정세민']},
-  {id:6, mentorKo:'김주해', mentorEn:'Juhae Kim', deptKo:'전기및전자공학부', deptEn:'School of Electrical Engineering', course:'2', students:['정우찬','정율희','김효빈','한은서']},
-  {id:7, mentorKo:'박경호', mentorEn:'Kyungho Park', deptKo:'산업디자인학과', deptEn:'Dept. of Industrial Design', course:'3', students:['최준','한아람','강나연']}
+  {id:1, teamKo:'뭐하조', teamEn:'Mwohajo', mentorKo:'임예린', mentorEn:'Yerin Lim', deptKo:'산업디자인학과', deptEn:'Dept. of Industrial Design', course:'1', students:['김소연','김수아','이도연','강민서']},
+  {id:2, teamKo:'아이들', teamEn:'The Kids', mentorKo:'여남규', mentorEn:'Namgyu Yeo', deptKo:'산업디자인학과', deptEn:'Dept. of Industrial Design', course:'2', students:['김지안','서멜린다','추하율','김민서']},
+  {id:3, teamKo:'26', teamEn:'26', mentorKo:'명소영', mentorEn:'Soyoung Myeong', deptKo:'산업디자인학과', deptEn:'Dept. of Industrial Design', course:'3', students:['손채원','심서현','강윤하','김윤지']},
+  {id:4, teamKo:'사방팔방', teamEn:'All Directions', mentorKo:'이채원', mentorEn:'Chaewon Lee', deptKo:'전산학부', deptEn:'School of Computing', course:'1', students:['이도영','이서은','김재윤','정다예']},
+  {id:5, teamKo:'하이파이브', teamEn:'High Five', mentorKo:'서혜연', mentorEn:'Hyeyeon Seo', deptKo:'산업디자인학과', deptEn:'Dept. of Industrial Design', course:'4', students:['이선우','이해원','김태은','정세민']},
+  {id:6, teamKo:'주해와 아이들', teamEn:'Juhae & the Kids', mentorKo:'김주해', mentorEn:'Juhae Kim', deptKo:'전기및전자공학부', deptEn:'School of Electrical Engineering', course:'2', students:['정우찬','정율희','김효빈','한은서']},
+  {id:7, teamKo:'최강박하사탕', teamEn:'Ultimate Peppermint Candy', mentorKo:'박경호', mentorEn:'Kyungho Park', deptKo:'산업디자인학과', deptEn:'Dept. of Industrial Design', course:'3', students:['최준','한아람','강나연']}
 ];
 var STUDENT_MENTOR = {};
 MENTOR_GROUPS.forEach(function(g){
@@ -1055,7 +1044,7 @@ function openStudentModal(chip){
   document.getElementById('studentModalSchool').textContent = isEn && schoolEnEl ? schoolEnEl.textContent : (schoolKoEl ? schoolKoEl.textContent : '');
 
   if(group){
-    document.getElementById('studentModalGroup').textContent = isEn ? ('Group ' + group.id) : (group.id + '조');
+    document.getElementById('studentModalGroup').textContent = isEn ? ('Group ' + group.id + ' · ' + group.teamEn) : (group.id + '조 · ' + group.teamKo);
     document.getElementById('studentModalMentor').textContent = isEn ? group.mentorEn : group.mentorKo;
     document.getElementById('studentModalCourse').textContent = isEn ? ('Route ' + group.course) : ('루트 ' + group.course);
   } else {
@@ -1079,16 +1068,6 @@ document.getElementById('studentModal').addEventListener('click', function(e){
   if(e.target.id === 'studentModal'){ closeStudentModal(); }
 });
 
-// ---------- participants/mentors tabs ----------
-document.querySelectorAll('.ptab-btn').forEach(function(btn){
-  btn.addEventListener('click', function(){
-    var key = btn.getAttribute('data-ptab');
-    document.querySelectorAll('.ptab-btn').forEach(function(b){ b.classList.toggle('active', b === btn); });
-    document.querySelectorAll('.ptab-panel').forEach(function(p){
-      p.classList.toggle('active', p.getAttribute('data-ptab-panel') === key);
-    });
-  });
-});
 </script>
 
 </body>
