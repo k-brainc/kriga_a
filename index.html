@@ -272,6 +272,43 @@
   .student-modal-label{color:var(--ink-soft); font-weight:700; flex:none;}
   .student-modal-value{color:var(--ink); font-weight:700; text-align:right;}
 
+  /* ---------- page tabs ---------- */
+  .page-tabs{display:flex; gap:6px; background:var(--cream); padding:4px; border-radius:999px; margin-bottom:14px;}
+  .page-tab-btn{flex:1; border:none; background:transparent; color:var(--ink-soft); font-family:var(--sans); font-weight:800; font-size:13px; padding:9px 0; border-radius:999px; cursor:pointer;}
+  .page-tab-btn.active{background:var(--ink-deep); color:var(--peach-soft);}
+  .page-tab-panel{display:none;}
+  .page-tab-panel.active{display:block;}
+
+  /* ---------- seating chart ---------- */
+  .instructor-bar{
+    background:var(--ink-deep); color:var(--peach-soft); font-family:var(--serif); font-weight:800; font-size:14px;
+    text-align:center; padding:12px; border-radius:12px; margin-bottom:16px;
+  }
+  .seat-room{display:flex; flex-direction:column; gap:10px;}
+  .seat-row{display:flex; gap:6px; align-items:flex-start;}
+  .seat-row .seat-cluster{flex:0 0 calc(33.333% - 4px); min-width:0; margin-bottom:0;}
+  .seat-row-2{justify-content:space-around;}
+  .seat-row-3{align-items:flex-end;}
+  .seat-cluster{
+    position:relative; background:var(--paper); border-radius:12px; box-shadow:var(--shadow); overflow:hidden;
+  }
+  .seat-cluster-3{aspect-ratio:145.1 / 175.6;}
+  .seat-cluster-4{aspect-ratio:145.1 / 239.4;}
+  .seat{position:absolute; box-sizing:border-box; border:2px solid var(--paper); background:var(--peach-dim); padding:4px 3px; text-align:center; overflow:hidden; display:flex; flex-direction:column; justify-content:center;}
+  .seat-cluster-3 .seat:nth-child(1){left:0%; top:0%; width:49.97%; height:63.72%;}
+  .seat-cluster-3 .seat:nth-child(2){left:49.97%; top:0%; width:50.03%; height:63.72%;}
+  .seat-cluster-3 .seat:nth-child(3){left:9.37%; top:63.72%; width:81.19%; height:36.28%;}
+  .seat-cluster-4 .seat:nth-child(1){left:9.4%; top:0%; width:81.2%; height:26.65%;}
+  .seat-cluster-4 .seat:nth-child(2){left:0%; top:26.65%; width:50%; height:46.74%;}
+  .seat-cluster-4 .seat:nth-child(3){left:50%; top:26.65%; width:50%; height:46.74%;}
+  .seat-cluster-4 .seat:nth-child(4){left:9.4%; top:73.39%; width:81.2%; height:26.61%;}
+  .seat-name{font-family:var(--serif); font-weight:800; font-size:12px; color:var(--ink-deep); line-height:1.25; overflow-wrap:break-word;}
+  .seat-en{font-size:9px; color:var(--terracotta); font-weight:700; margin-top:2px; line-height:1.2; overflow-wrap:break-word;}
+  .seat-info{font-size:8.5px; color:var(--ink-soft); margin-top:2px; line-height:1.25; overflow-wrap:break-word;}
+  .seat-row-3 .seat-name{font-size:11px;}
+  .seat-row-3 .seat-en{font-size:8.5px;}
+  .seat-row-3 .seat-info{font-size:8px;}
+
   /* ---------- mentor groups ---------- */
   .mentor-list{margin-top:6px;}
   .mentor-group{margin-bottom:24px;}
@@ -651,6 +688,11 @@
       </div>
     </div>
     <div class="page-body">
+      <div class="page-tabs">
+        <button class="page-tab-btn active" data-ptab="roster"><span class="i18n-ko">참가자 명단</span><span class="i18n-en">Roster</span></button>
+        <button class="page-tab-btn" data-ptab="seating"><span class="i18n-ko">자리 배치도</span><span class="i18n-en">Seating Chart</span></button>
+      </div>
+      <div class="page-tab-panel active" data-ptab-panel="roster">
       <div class="draft-banner i18n-ko">※ 미술분야 워크숍 참가자와 생활멘토 조 편성입니다. 이름을 누르면 상세 정보를 볼 수 있어요.</div><div class="draft-banner i18n-en">※ Visual Arts Workshop participants organized by life mentor team. Tap a name for details.</div>
       <div class="mentor-list">
       <div class="mentor-group">
@@ -762,6 +804,169 @@
           <div class="participant-chip"><div class="pname i18n-ko">최준</div><div class="pname i18n-en">Jun Choi</div><div class="pschool i18n-ko">자양중 · 1학년</div><div class="pschool i18n-en">Jayang Middle School · Grade 1</div></div>
           <div class="participant-chip"><div class="pname i18n-ko">한아람</div><div class="pname i18n-en">Aram Han</div><div class="pschool i18n-ko">배화여중 · 1학년</div><div class="pschool i18n-en">Baehwa Girls' Middle School · Grade 1</div></div>
           <div class="participant-chip"><div class="pname i18n-ko">강나연</div><div class="pname i18n-en">Nayeon Kang</div><div class="pschool i18n-ko">세종예고 · 1학년</div><div class="pschool i18n-en">Sejong Arts High School · Grade 1</div></div>
+        </div>
+      </div>
+      </div>
+      </div>
+
+      <div class="page-tab-panel" data-ptab-panel="seating">
+      <div class="draft-banner i18n-ko">※ 강의실 학생 자리 배치도입니다.</div><div class="draft-banner i18n-en">※ Classroom seating chart for participants.</div>
+      <div class="instructor-bar i18n-ko">강사</div><div class="instructor-bar i18n-en">Instructor</div>
+      <div class="seat-room">
+        <div class="seat-row seat-row-3">
+        <div class="seat-cluster seat-cluster-3">
+          <div class="seat">
+            <div class="seat-name">한아람</div>
+            <div class="seat-en">Aram Han</div>
+            <div class="seat-info">배화여중 · 1학년</div>
+          </div>
+          <div class="seat">
+            <div class="seat-name">강나연</div>
+            <div class="seat-en">Nayeon Kang</div>
+            <div class="seat-info">세종예고 · 1학년</div>
+          </div>
+          <div class="seat">
+            <div class="seat-name">최준</div>
+            <div class="seat-en">Jun Choi</div>
+            <div class="seat-info">자양중 · 1학년</div>
+          </div>
+        </div>
+        <div class="seat-cluster seat-cluster-4">
+          <div class="seat">
+            <div class="seat-name">정다예</div>
+            <div class="seat-en">Daye Jung</div>
+            <div class="seat-info">덕원예고 · 1학년</div>
+          </div>
+          <div class="seat">
+            <div class="seat-name">김재윤</div>
+            <div class="seat-en">Jaeyoon Kim</div>
+            <div class="seat-info">포항제철중 · 3학년</div>
+          </div>
+          <div class="seat">
+            <div class="seat-name">이도영</div>
+            <div class="seat-en">Doyoung Lee</div>
+            <div class="seat-info">천안불당중 · 1학년</div>
+          </div>
+          <div class="seat">
+            <div class="seat-name">이서은</div>
+            <div class="seat-en">Seoeun Lee</div>
+            <div class="seat-info">천안오성중 · 1학년</div>
+          </div>
+        </div>
+        <div class="seat-cluster seat-cluster-4">
+          <div class="seat">
+            <div class="seat-name">서멜린다</div>
+            <div class="seat-en">Melinda Seo</div>
+            <div class="seat-info">언동중 · 1학년</div>
+          </div>
+          <div class="seat">
+            <div class="seat-name">김민서</div>
+            <div class="seat-en">Minseo Kim</div>
+            <div class="seat-info">성희여고 · 1학년</div>
+          </div>
+          <div class="seat">
+            <div class="seat-name">김지안</div>
+            <div class="seat-en">Jian Kim</div>
+            <div class="seat-info">포항여중 · 1학년</div>
+          </div>
+          <div class="seat">
+            <div class="seat-name">추하율</div>
+            <div class="seat-en">Hayul Chu</div>
+            <div class="seat-info">위례중 · 2학년</div>
+          </div>
+        </div>
+        </div>
+        <div class="seat-row seat-row-2">
+        <div class="seat-cluster seat-cluster-4">
+          <div class="seat">
+            <div class="seat-name">김윤지</div>
+            <div class="seat-en">Yoonji Kim</div>
+            <div class="seat-info">덕원예고 · 1학년</div>
+          </div>
+          <div class="seat">
+            <div class="seat-name">강윤하</div>
+            <div class="seat-en">Yoonha Kang</div>
+            <div class="seat-info">동대문중 · 3학년</div>
+          </div>
+          <div class="seat">
+            <div class="seat-name">심서현</div>
+            <div class="seat-en">Seohyun Sim</div>
+            <div class="seat-info">광주예중 · 1학년</div>
+          </div>
+          <div class="seat">
+            <div class="seat-name">손채원</div>
+            <div class="seat-en">Chaewon Son</div>
+            <div class="seat-info">신명여중 · 1학년</div>
+          </div>
+        </div>
+        <div class="seat-cluster seat-cluster-4">
+          <div class="seat">
+            <div class="seat-name">김수아</div>
+            <div class="seat-en">Sua Kim</div>
+            <div class="seat-info">성서중 · 1학년</div>
+          </div>
+          <div class="seat">
+            <div class="seat-name">김소연</div>
+            <div class="seat-en">Soyeon Kim</div>
+            <div class="seat-info">예원학교 · 1학년</div>
+          </div>
+          <div class="seat">
+            <div class="seat-name">강민서</div>
+            <div class="seat-en">Minseo Kang</div>
+            <div class="seat-info">홈스쿨링 · 1학년</div>
+          </div>
+          <div class="seat">
+            <div class="seat-name">이도연</div>
+            <div class="seat-en">Doyeon Lee</div>
+            <div class="seat-info">분당구미중 · 2학년</div>
+          </div>
+        </div>
+        </div>
+        <div class="seat-row seat-row-2">
+        <div class="seat-cluster seat-cluster-4">
+          <div class="seat">
+            <div class="seat-name">이해원</div>
+            <div class="seat-en">Haewon Lee</div>
+            <div class="seat-info">불당중 · 1학년</div>
+          </div>
+          <div class="seat">
+            <div class="seat-name">정세민</div>
+            <div class="seat-en">Semin Jung</div>
+            <div class="seat-info">죽전고 · 1학년</div>
+          </div>
+          <div class="seat">
+            <div class="seat-name">김태은</div>
+            <div class="seat-en">Taeeun Kim</div>
+            <div class="seat-info">용인한빛중 · 3학년</div>
+          </div>
+          <div class="seat">
+            <div class="seat-name">이선우</div>
+            <div class="seat-en">Sunwoo Lee</div>
+            <div class="seat-info">대구제일중 · 1학년</div>
+          </div>
+        </div>
+        <div class="seat-cluster seat-cluster-4">
+          <div class="seat">
+            <div class="seat-name">정율희</div>
+            <div class="seat-en">Yulhee Jung</div>
+            <div class="seat-info">천안월봉중 · 1학년</div>
+          </div>
+          <div class="seat">
+            <div class="seat-name">김효빈</div>
+            <div class="seat-en">Hyobin Kim</div>
+            <div class="seat-info">남목중 · 3학년</div>
+          </div>
+          <div class="seat">
+            <div class="seat-name">정우찬</div>
+            <div class="seat-en">Woochan Jung</div>
+            <div class="seat-info">서원중 · 1학년</div>
+          </div>
+          <div class="seat">
+            <div class="seat-name">한은서</div>
+            <div class="seat-en">Eunseo Han</div>
+            <div class="seat-info">홈스쿨링 · 1학년</div>
+          </div>
+        </div>
         </div>
       </div>
       </div>
@@ -1101,6 +1306,18 @@ document.getElementById('studentModal').addEventListener('click', function(e){
   if(e.target.id === 'studentModal'){ closeStudentModal(); }
 });
 
+
+// ---------- participants page tabs ----------
+document.querySelectorAll('.page-tab-btn').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var key = btn.getAttribute('data-ptab');
+    var container = btn.closest('.page-body');
+    container.querySelectorAll('.page-tab-btn').forEach(function(b){ b.classList.toggle('active', b === btn); });
+    container.querySelectorAll('.page-tab-panel').forEach(function(p){
+      p.classList.toggle('active', p.getAttribute('data-ptab-panel') === key);
+    });
+  });
+});
 </script>
 
 </body>
