@@ -41,14 +41,15 @@
   .live-dot{ width:8px; height:8px; border-radius:50%; background:#6fd18a; animation:pulse 1.8s infinite; }
   @keyframes pulse{ 0%{box-shadow:0 0 0 0 rgba(111,209,138,.6);} 70%{box-shadow:0 0 0 8px rgba(111,209,138,0);} 100%{box-shadow:0 0 0 0 rgba(111,209,138,0);} }
   .updated-text{font-size:12px; color:#b7c3ca;}
-  button.refresh-btn{
+  .refresh-btn{
     font-weight:600; font-size:13px; background:rgba(238,201,122,.14); color:var(--gold-soft);
     border:1px solid rgba(238,201,122,.4); border-radius:20px; padding:8px 16px; cursor:pointer;
     display:flex; align-items:center; gap:6px; transition:background .2s, transform .2s;
+    text-decoration:none; box-sizing:border-box;
   }
-  button.refresh-btn:hover{background:rgba(238,201,122,.24); transform:translateY(-1px);}
-  button.refresh-btn svg{width:14px; height:14px;}
-  button.refresh-btn.spinning svg{animation:spin .8s linear infinite;}
+  .refresh-btn:hover{background:rgba(238,201,122,.24); transform:translateY(-1px);}
+  .refresh-btn svg{width:14px; height:14px;}
+  .refresh-btn.spinning svg{animation:spin .8s linear infinite;}
   @keyframes spin{to{transform:rotate(360deg);}}
 
   main{max-width:1100px; margin:0 auto; padding:28px;}
@@ -179,6 +180,10 @@
     <div class="status">
       <span class="live-badge"><span class="live-dot"></span>LIVE</span>
       <span class="updated-text" id="updatedText">불러오는 중…</span>
+      <a class="refresh-btn" id="sourceDataBtn" href="#" target="_blank" rel="noopener" style="display:none;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>
+        원본 데이터 보기
+      </a>
       <button class="refresh-btn" id="refreshBtn">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 1 1-2.64-6.36"/><path d="M21 3v6h-6"/></svg>
         새로고침
@@ -829,6 +834,13 @@ async function loadData(isManual){
 }
 
 document.getElementById('refreshBtn').addEventListener('click', ()=>loadData(true));
+
+if(CONFIG.SPREADSHEET_ID){
+  const sourceBtn = document.getElementById('sourceDataBtn');
+  sourceBtn.href = `https://docs.google.com/spreadsheets/d/${CONFIG.SPREADSHEET_ID}/edit`;
+  sourceBtn.style.display = 'flex';
+}
+
 loadData(false);
 if(CONFIG.REFRESH_INTERVAL_SEC > 0){
   setInterval(()=>loadData(false), CONFIG.REFRESH_INTERVAL_SEC * 1000);
